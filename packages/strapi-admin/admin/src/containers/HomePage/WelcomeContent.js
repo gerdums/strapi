@@ -14,29 +14,8 @@ import styles from './styles.scss';
 function WelcomeContent({ hasContent }) {
   return (
     <React.Fragment>
-      <div className={styles.iconWave}>👋</div>
       {!hasContent && (
         <FormattedMessage id="app.components.HomePage.welcomeBlock.content">
-          {message => (
-            <p className={styles.welcomeContentP}>
-              {message}
-              <a className={styles.welcomeContentA} href="https://slack.strapi.io/" target="_blank">
-                Slack
-              </a>
-              <FormattedMessage id="app.components.HomePage.welcomeBlock.content.raise" />
-              <FormattedMessage id="app.components.HomePage.welcomeBlock.content.issues">
-                {message => (
-                  <a
-                    className={styles.welcomeContentA}
-                    href="https://github.com/strapi/strapi/issues/new"
-                    target="_blank"
-                  >
-                    {message}
-                  </a>
-                )}
-              </FormattedMessage>
-            </p>
-          )}
         </FormattedMessage>
       )}
       {hasContent && (
